@@ -19,12 +19,11 @@
         "x86_64-linux"
       ] (system: {
         default = inputs.nixpkgs.legacyPackages."${system}".stdenv.mkDerivation {
-          name = "wallpapers";
+          name = "alyraffauf-wallpapers";
           version = "0.1.0";
           src = ./.;
-          installPhase = '' 
+          installPhase = ''
             mkdir -p $out/share/backgrounds
-            
             cp -r *.jpg $out/share/backgrounds
             cp -r *.png $out/share/backgrounds
           '';
