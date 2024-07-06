@@ -1,0 +1,21 @@
+name: "nix"
+on: [push]
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: cachix/install-nix-action@v27
+      - name: check if flake complies with default style
+        run: nix fmt -- -c .
+  build-pkg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: cachix/install-nix-action@v27
+      - name: build package
+        run: nix build
