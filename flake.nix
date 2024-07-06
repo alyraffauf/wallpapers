@@ -1,5 +1,5 @@
 {
-  description = "Aly's NixOS flake.";
+  description = "Aly's wallpaper collection.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
