@@ -22,8 +22,6 @@
           name = "wallpapers";
           version = "0.1.0";
           src = ./.;
-          buildInputs = [];
-          buildPhase = "";
           installPhase = ''
             mkdir -p $out/share/backgrounds
             cp -r *.jpg $out/share/backgrounds
